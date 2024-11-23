@@ -10,7 +10,7 @@ const SeaarchBar = () => {
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
-          setManufactjurer={setManufacturer}
+          setManufacturer={setManufacturer}
         />
       </div>
     </form>
