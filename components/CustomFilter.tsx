@@ -14,7 +14,7 @@ function CustomFilter({ title, options }: CustomFilterProps) {
     const newPathName = updateSearchParams(title, e.value.toLowerCase());
 
     // router.push akan mentriger web untuk melakukan server side rendering
-    router.push(newPathName);
+    router.push(newPathName, { scroll: false });
   };
 
   const [selected, setSelected] = useState(options[0]);

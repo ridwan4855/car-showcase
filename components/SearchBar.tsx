@@ -40,7 +40,7 @@ const SeaarchBar = () => {
       window.location.pathname
     }?${searchParams.toString()}`;
 
-    router.push(mewPathName);
+    router.push(mewPathName, { scroll: false });
   };
 
   const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
