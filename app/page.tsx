@@ -5,11 +5,13 @@ import { CustomFilter, Hero, SearchBar, CarCard } from "@/components";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
 import { ShowMore } from "@/components/ShowMore";
+
 import { useEffect, useState } from "react";
+import { HomeProps } from "@/types";
 
 // server side rendering, there is a bug thatt happend when i update the serachparams
 
-export default async function Home({ searchParams }) {
+export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
