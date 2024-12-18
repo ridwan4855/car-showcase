@@ -1,11 +1,10 @@
-"use client";
-
 import { CustomFilter, Hero, SearchBar, CarCard } from "@/components";
 
-import { fetchCars } from "@/utils";
+import { fetchCars, listCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
 import { ShowMore } from "@/components/ShowMore";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 // server side rendering, there is a bug thatt happend when i update the serachparams
 
@@ -19,42 +18,8 @@ export default async function Home({ searchParams }) {
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-  // export default function Home() {
-  //   const [allCars, setAllCars] = useState([]);
-  //   const [loading, setLoading] = useState(false);
 
-  //   // search states
-  //   const [manufacturer, setManufacturer] = useState("");
-  //   const [model, setModel] = useState("");
-
-  //   // filter states
-  //   const [fuel, setFuel] = useState("");
-  //   const [year, setYear] = useState(2022);
-
-  //   // pagination states
-  //   const [limit, setLimit] = useState(10);
-
-  //   const getCars = async () => {
-  //     try {
-  //       const result = await fetchCars({
-  //         manufacturer: manufacturer || "",
-  //         year: year || 2022,
-  //         fuel: fuel || "",
-  //         limit: limit || 10,
-  //         model: model || "",
-  //       });
-
-  //       setAllCars(result);
-  //     } catch (error) {
-  //       console.log(error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     getCars();
-  //   }, [fuel, year, limit, manufacturer, model]);
+  const isCarsEmpty = !Array.isArray(listCars) || listCars.length < 1 || !listCars;
 
   return (
     <main className="overflow-hidden">
@@ -97,6 +62,25 @@ export default async function Home({ searchParams }) {
           </div>
         )}
       </div>
+
+      {!isCarsEmpty ? (
+        <div className="p-6 w-[90%] mx-auto bg-[rgb(16,16,16)] flex items-center justify-between">
+           {listCars?.map((elm) => (
+                <div className="bg-[#89CFF0]">
+                  <Image alt={elm.merk} width={200} height={200} src={elm.linkImage} className="relative after:absolute after:w-[20px] after:h-[20px] after:bg-[rgb(20,39,29)] after:blur-md after:bottom-0"/>
+                  <div className="flex justify-around">
+                    <div>zzzz</div>
+                    <div> <button>Show</button></div>
+                  </div>
+                </div>
+              ))}
+
+        </div>
+      ) : (
+        <div className="container text-[30px]">No Data Found</div>
+      )}
+
+      
     </main>
   );
 }

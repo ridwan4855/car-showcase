@@ -45,9 +45,6 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   url.searchParams.append("zoomType", "fullscreen");
   url.searchParams.append("modelYear", `${year}`);
   url.searchParams.append("angle", `${angle}`);
-
-  console.log(url);
-
   return `${url}`;
 };
 
@@ -60,3 +57,119 @@ export const updateSearchParams = (type: string, value: string) => {
 
   return newPathName;
 };
+
+export const listCars =[
+  {
+    "merk" : "Avanza", 
+    "year":"2024", 
+    "unit":"270", 
+    "countSell" : "3",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 2", 
+    "year":"2024", 
+    "unit":"210", 
+    "countSell" : "5",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 3", 
+    "year":"2024", 
+    "unit":"2", 
+    "countSell" : "240",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 4", 
+    "year":"2024", 
+    "unit":"43", 
+    "countSell" : "230",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 5", 
+    "year":"2024", 
+    "unit":"3", 
+    "countSell" : "80",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 6", 
+    "year":"2024", 
+    "unit":"0", 
+    "countSell" : "120",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 7", 
+    "year":"2024", 
+    "unit":"0", 
+    "countSell" : "23",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  },
+  {
+    "merk" : "Avanza 8", 
+    "year":"2024", 
+    "unit":"100", 
+    "countSell" : "20",
+    "from":"Japan",
+    "linkImage" : "/icon/car-logo.svg" ,
+    "varianColor" : [
+      {"blue" : "#0000FF"},
+      {"green" : "#00A36C"},
+      {"red" : "#A52A2A"},
+      {"black" : "#36454F"}
+    ]
+  }
+]
+;
